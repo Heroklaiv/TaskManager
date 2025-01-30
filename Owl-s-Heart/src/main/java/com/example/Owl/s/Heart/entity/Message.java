@@ -2,12 +2,15 @@ package com.example.Owl.s.Heart.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
+@Setter
 @ToString
 public class Message {
     @Id
@@ -15,9 +18,9 @@ public class Message {
     private Long idMessage;
     private String textMessage;
     private LocalDateTime timeMessage;
-    @OneToOne
-    private Chat chat;
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    private Task task;
+    @ManyToOne
     private Account author;
 }
 

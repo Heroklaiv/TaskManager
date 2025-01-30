@@ -4,11 +4,14 @@ import com.example.Owl.s.Heart.dto.AccountDTO;
 import com.example.Owl.s.Heart.entity.Account;
 import com.example.Owl.s.Heart.service.AccountService;
 import jakarta.servlet.http.HttpSession;
+import org.apache.catalina.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/account")
@@ -38,6 +41,16 @@ public class AccountController {
     @GetMapping("/login")
     public String login() {
         return "login";
+    }
+    @GetMapping("/search")
+    public String search(@RequestParam(required = false) String username, Model model) {
+       Account account = accountService.findByUsername(username);
+       if (account == null) {
+           model.addAttribute("error", "Invalid username");
+       } else {
+           model.addAttribute("account", account);
+       }
+        return "search";
     }
 
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:insert="bar.html"></div>
+<div class="container mt-5">
+    <h2>Форма для ввода задачи</h2>
+    <form th:action="@{/task/create}" method="post">
+        <div class="form-group">
+            <label for="taskName">Имя задачи</label>
+            <input type="text" class="form-control" id="taskName" name="taskName" >
+        </div>
+        <div class="form-group">
+        <label for="taskDescription">Описание</label><br>
+        <textarea id="taskDescription" class="form-control" name="taskDescription" placeholder="Введите описание здесь..."></textarea><br>
+        </div>
+
+        <div class="form-group">
+            <label for="deadLine">Выбор крайней даты исполнения задачи</label>
+            <input type="date" class="form-control" id="deadLine" name="deadLine" >
+        </div>
+        <div class="form-group">
+            <label for="idTeam">Выбор команды</label>
+            <select class="form-control" id="idTeam" name="idTeam" required>
+                <option value="" disabled selected>Выберите команду...</option>
+                <option th:each="team : ${listTeams}" th:value="${team.getId()}"> <h4 th:text="${team.getName()}"></h4>
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+
+</body>
+</html>
+<style>
+    textarea {
+        width: 100%;
+        height: 150px;
+    }
+</style>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="bar.html"></div>
+<div class="card">
+    <div class="card-header">
+       Имя команды
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" th:text="${Team.getName()}"></h5>
+        <form th:action="@{/team/update}" method="post">
+            <div class="form-group">
+                <label for="teamName">Новое имя команды</label>
+                <input type="text" class="form-control" id="teamName" name="teamName" required>
+                <input type="hidden" th:value="${Team.getId()}" name="idTeam"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Редактировать</button>
+        </form>
+        <form th:action="@{/team/update}" method="post">
+            <div class="form-group">
+                <label for="username">Добавить участников по username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+                <input type="hidden" th:value="${Team.getId()}" name="idTeam"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

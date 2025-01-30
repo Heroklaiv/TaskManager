@@ -59,10 +59,8 @@ public class SecurityConfiguration {
         public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                             Authentication authentication) throws IOException, ServletException {
             HttpSession session = request.getSession();
-            // Пример: сохраняем информацию о пользователе в сессию
+            // сохраняем информацию о пользователе в сессию
             session.setAttribute("user", authentication.getPrincipal());
-            //позже удалить строку ниже
-            System.out.println(authentication.getPrincipal());
             // Вызываем стандартный обработчик успешной аутентификации
             super.onAuthenticationSuccess(request, response, authentication);
         }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refactor</title>
+</head>
+<body>
+<div th:insert="bar.html"></div>
+<div class="container mt-5">
+    <h2>Форма для ввода задачи</h2>
+    <form th:action="@{/task/refactor}" method="post">
+        <div th:if="${dto.getParameter() == 1}" class="form-group">
+            <label for="taskName">Имя задачи</label>
+            <input type="hidden" th:value="${'name'}" name="parameter">
+            <input type="hidden" th:value="${dto.getId()}" name="id">
+            <input type="text" class="form-control" id="taskName" name="taskName">
+        </div>
+        <div th:if="${dto.getParameter() == 2}" class="form-group">
+            <label for="taskDescription">Описание</label><br>
+            <input type="hidden" th:value="${'description'}" name="parameter">
+            <input type="hidden" th:value="${dto.getId()}" name="id">
+            <textarea id="taskDescription" class="form-control" name="taskDescription"
+                      placeholder="Введите описание здесь..."></textarea><br>
+        </div>
+
+        <div th:if="${dto.getParameter() == 3}" class="form-group">
+            <label for="deadLine">Выбор крайней даты исполнения задачи</label>
+            <input type="date" class="form-control" id="deadLine" name="deadLine">
+            <input type="hidden" th:value="${'deadLine'}" name="parameter">
+            <input type="hidden" th:value="${dto.getId()}" name="id">
+        </div>
+        <div th:if="${dto.getParameter() == 4}" class="form-group">
+            <label for="idAccount">Выбор исполнителя</label>
+            <select class="form-control" id="idAccount" name="idAccount" required>
+                <option value="" disabled selected>Выберите исполнителя...</option>
+                <option th:each="acc : ${dto.getAccountsTeam()}" th:value="${acc.getId()}"><h4 th:text="${acc.getName()}"></h4>
+                </option>
+            </select>
+            <input type="hidden" th:value="${'performer'}" name="parameter">
+            <input type="hidden" th:value="${dto.getId()}" name="id">
+        </div>
+        <div th:if="${dto.getParameter() == 6}" class="form-group">
+            <label for="idTeam">Выбор команды</label>
+            <select class="form-control" id="idTeam" name="idTeam" required>
+                <option value="" disabled selected>Выберите команду...</option>
+                <option th:each="team : ${dto.getTeamsByOwner()}" th:value="${team.getId()}"><h4 th:text="${team.getName()}"></h4>
+                </option>
+            </select>
+            <input type="hidden" th:value="${'team'}" name="parameter">
+            <input type="hidden" th:value="${dto.getId()}" name="id">
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+</body>
+</html>

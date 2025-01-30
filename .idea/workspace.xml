@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="05c90299-6980-4212-ba36-6b2cbd726ed6" name="Changes" comment="создание страницы отображение команды с сервисом и ДТО">
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/CalendarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/ExceptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/CalendarDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/CreateTaskDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/CreateTeamDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/DayOfCalendarDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/MessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/NewTaskDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/RefactorTaskDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/SendMessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/TaskListDayDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/TaskPageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/TeamMemberTasksDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/TaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/calendar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/create_team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/refactor_team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/task_create_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/task_refactor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/tasks_on_this_day.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/AccountLoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/AccountLoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/TeamPageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/TeamPageDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Chat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/entity/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/TeamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/repository/TeamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/page_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/page_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/team.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Heroklaiv&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Heroklaiv/TaskManager.git&quot;,
+    &quot;accountId&quot;: &quot;167f8eb0-33d9-4b92-bbbe-c1cf0dcdd7aa&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2r4yibKudCePVgy7eOHOQv97N4q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.mainTest.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application.executor": "Run",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/LEGION Y540/Downloads/Owl's Heart/Owl-s-Heart/src/main/resources/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ],
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LEGION Y540\Downloads\Owl's Heart\Owl-s-Heart\src\main\resources\templates" />
+      <recent name="C:\Users\LEGION Y540\Downloads\Owl's Heart\Owl-s-Heart" />
+      <recent name="C:\Users\LEGION Y540\Downloads\Owl's Heart\Owl-s-Heart\src\main\java\com\example\Owl\s\Heart\controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.Owl.s.Heart.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="mainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <option name="MAIN_CLASS_NAME" value="mainTest" />
+      <module name="Owl-s-Heart" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Owl-s-Heart" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Owl.s.Heart.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.mainTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05c90299-6980-4212-ba36-6b2cbd726ed6" name="Changes" comment="" />
+      <created>1735832769867</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735832769867</updated>
+      <workItem from="1735832770904" duration="955000" />
+      <workItem from="1736617217338" duration="1492000" />
+      <workItem from="1736618729579" duration="2048000" />
+      <workItem from="1736672183581" duration="12110000" />
+      <workItem from="1736693212587" duration="1422000" />
+      <workItem from="1736788157493" duration="13424000" />
+      <workItem from="1737034007757" duration="8497000" />
+      <workItem from="1737051060347" duration="357000" />
+      <workItem from="1737051440381" duration="768000" />
+      <workItem from="1737052228991" duration="13085000" />
+      <workItem from="1737112296814" duration="23077000" />
+      <workItem from="1737216008084" duration="9079000" />
+      <workItem from="1737266411605" duration="34085000" />
+      <workItem from="1737328730966" duration="10161000" />
+      <workItem from="1737351981221" duration="732000" />
+      <workItem from="1737380826445" duration="10648000" />
+      <workItem from="1737440192163" duration="7452000" />
+      <workItem from="1737458260458" duration="20766000" />
+      <workItem from="1737558239761" duration="15557000" />
+      <workItem from="1737819209044" duration="12786000" />
+      <workItem from="1738086635760" duration="5233000" />
+      <workItem from="1738166924299" duration="10192000" />
+      <workItem from="1738218297182" duration="20510000" />
+    </task>
+    <task id="LOCAL-00001" summary="создание страницы отображение команды с сервисом и ДТО">
+      <option name="closed" value="true" />
+      <created>1737051204130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737051204130</updated>
+    </task>
+    <task id="LOCAL-00002" summary="создание страницы отображение команды с сервисом и ДТО">
+      <option name="closed" value="true" />
+      <created>1737051470862</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737051470863</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="создание страницы отображение команды с сервисом и ДТО" />
+    <option name="LAST_COMMIT_MESSAGE" value="создание страницы отображение команды с сервисом и ДТО" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.expression.spel.SpelEvaluationException" package="org.springframework.expression.spel" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TaskService.java</url>
+          <line>240</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="dayOfCalendarDayDTOS.get(1).tasksControlToday" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

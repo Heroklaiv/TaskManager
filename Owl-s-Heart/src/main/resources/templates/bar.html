@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>MenuBar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -16,26 +17,27 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Календарь</a>
+                    <a class="nav-link active" th:if="${session.user != null}" aria-current="page" href="/calendar">Календарь</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Создать задачу</a>
+                    <a class="nav-link" th:if="${session.user != null}" href="/task/create">Создать задачу</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Группы</a>
+                    <a class="nav-link" th:if="${session.user != null}" href="/team">Группы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/account/login">Вход</a>
+                    <a class="nav-link" th:if="${session.user != null}" href="/team/create">Создать группу</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/account/reg">Регистрация</a>
+                    <a class="nav-link" th:if="${session.user == null}" href="/account/login">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:if="${session.user == null}" href="/account/reg">Регистрация</a>
                 </li>
                 <form th:action="@{/account/logout}" method="post">
-                    <button type="button" class="btn btn-danger">Выход</button>
+                    <button th:if="${session.user != null}" type="submit" class="btn btn-outline-danger">Выход</button>
+
                 </form>
-                <!--<li><a class="dropdown-item" href="/account/login">Вход</a></li>
-                <li><a class="dropdown-item" href="/account/reg">Регистрация</a></li>
-                <li><a class="dropdown-item" href="#">Выход</a></li>-->
             </ul>
 
 

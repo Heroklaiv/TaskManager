@@ -1,10 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<div th:insert="bar.html"></div>
+<div class="card text-center">
+    <div class="card-header" th:text="${'Задача №' + dto.getId()}">
 
+    </div>
+    <div class="card-body">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Параметр</th>
+                <th scope="col">Значение</th>
+                <th scope="col">Редактировать</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td th:text="${'Имя задачи '}"></td>
+                <td th:text="${dto.getTaskName()}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}" th:action="${'/task/refactor'}"
+                          method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'name'}" name="parameter">
+                        <button type="submit" class="btn btn-outline-success">Изменить</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td th:text="${'Описание задачи '}"></td>
+                <td th:text="${dto.getTaskDescription()}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}" th:action="${'/task/refactor'}"
+                          method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'description'}" name="parameter">
+                        <button type="submit" class="btn btn-outline-success">Изменить</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td th:text="${'Срок исполнения задачи'}"></td>
+                <td th:text="${dto.getDeadline()}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}" th:action="${'/task/refactor'}"
+                          method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'deadline'}" name="parameter">
+                        <button type="submit" class="btn btn-outline-success">Изменить</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td th:text="${'Исполнитель '}"></td>
+                <td th:text="${dto.getNamePerformer()}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}"
+                          th:action="${'/task/refactor'}" method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'performer'}" name="parameter">
+                        <button type="submit" class="btn btn-outline-success">Назначить</button>
+                    </form>
+                    <form th:if="${dto.getOwner().getName() != dto.getNameAccount()}"
+                          th:action="${'/task/refactor'}" method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'perform'}" name="parameter">
+                        <button th:if="${dto.getNamePerformer().equals('ВНИМАНИЕ, он не назначен!')}" type="submit"
+                                class="btn btn-outline-success">Исполнить
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td th:text="${'Назначенная команда '}"></td>
+                <td th:text="${dto.getTeamName()}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}" th:action="${'/task/refactor'}"
+                          method="get">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <input type="hidden" th:value="${'team'}" name="parameter">
+                        <button type="submit" class="btn btn-outline-success">Изменить</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td th:text="${'Автор задачи '}"></td>
+                <td th:text="${dto.getOwner().getName()}"></td>
+                <td th:text="${'Параметр нельзя изменить!'}"></td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td th:text="${'Удалить задачу '}"></td>
+                <td>
+                    <form th:if="${dto.getOwner().getName() == dto.getNameAccount()}" th:action="${'/task/delete'}"
+                          method="post">
+                        <input type="hidden" th:value="${dto.getId()}" name="id">
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <div class="card-footer text-body-secondary">
+            <h2 th:text="${'Задача создана ' + dto.getTaskDate()}"></h2>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Чат задачи <span th:text="${dto.getTaskName()}">Пользователь</span></h5>
+            </div>
+            <div class="card-body">
+                <div class="messages" th:each="message : ${dto.getMessages()}">
+                    <div class="message"
+                         th:class="${message.getNameAuthor() == dto.getNameAccount()?  'text-right' : 'text-left'}">
+                        <strong th:text="${message.getNameAuthor()}">Пользователь</strong>:
+                        <span th:text="${message.getText()}">Текст сообщения</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <form th:action="@{task/sendMessage}" method="post">
+                    <div class="d-flex">
+                        <input type="text"
+                               class="form-control flex-grow-1"
+                               placeholder="Введите сообщение"
+                               name="messageText"
+                               required>
+                        <input type="hidden" name="author" th:value="${session.user}">
+                        <input type="hidden" name="taskId" th:value="${dto.getId()}">
+                        <button class="btn btn-primary ml-2" type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
