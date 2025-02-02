@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="DiffGenerationConfig">
-    <option name="snapshotDb" value="false" />
-    <option name="snapshotModelValue" value="Owl-s-Heart:entityManagerFactory" />
-    <option name="sourceModelValue" value="Owl-s-Heart:entityManagerFactory" />
-    <option name="targetDbValue" value="9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e" />
-  </component>
-</project>
