@@ -286,7 +286,7 @@ public class TaskService {
     }
 
     @Contract(pure = true)
-    private @NotNull String convertDayOfWeek(@NotNull String dayOfWeek) {
+    public @NotNull String convertDayOfWeek(@NotNull String dayOfWeek) {
         return switch (dayOfWeek) {
             case "SUNDAY" -> "Воскресенье";
             case "MONDAY" -> "Понедельник";
@@ -300,7 +300,7 @@ public class TaskService {
     }
 
     @Contract(pure = true)
-    private @NotNull String convertDayOfMonth(int month) {
+    public @NotNull String convertDayOfMonth(int month) {
         return switch (month) {
             case 1 -> "Январь";
             case 2 -> "Февраль";
@@ -318,7 +318,7 @@ public class TaskService {
         };
     }
     @Contract(pure = true)
-    private @NotNull String convertDayOfMonthIndex(int month) {
+    public @NotNull String convertDayOfMonthIndex(int month) {
         return switch (month) {
             case 1 -> "Января";
             case 2 -> "Февраля";

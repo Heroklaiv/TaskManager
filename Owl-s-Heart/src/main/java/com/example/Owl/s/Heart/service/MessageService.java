@@ -20,7 +20,7 @@ public class MessageService {
     @Autowired
     private TaskRepository taskRepository;
 
-    public Message createAndSaveMessage(String textMessage, Account author, Task task) {
+    public void createAndSaveMessage(String textMessage, Account author, Task task) {
         Message message = new Message();
         message.setAuthor(author);
         message.setTextMessage(textMessage);
@@ -39,7 +39,6 @@ public class MessageService {
         }
 
         taskRepository.save(task1);
-        return message1;
 
     }
 

@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05c90299-6980-4212-ba36-6b2cbd726ed6" name="Changes" comment="работа дальше">
-      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/dto/IndexPageDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="05c90299-6980-4212-ba36-6b2cbd726ed6" name="Changes" comment="задачи на день">
+      <change afterPath="$PROJECT_DIR$/.idea/diff-generator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpb-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/db/migration/V1__.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Owl-s-Heart/src/test/java/com/example/Owl/s/Heart/service/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e7e82ff-15fa-4c0d-8546-0c0be9b1d26e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/templates/page_test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/java/com/example/Owl/s/Heart/service/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Owl-s-Heart/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Dockerfile" />
+        <option value="com.intellij.jpb.FlywayMigrationScript" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +56,10 @@
     &quot;accountId&quot;: &quot;167f8eb0-33d9-4b92-bbbe-c1cf0dcdd7aa&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -58,44 +71,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.mainTest.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
-    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LEGION Y540/Downloads/Owl's Heart/Owl-s-Heart/src/main/resources/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.mainTest.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.Owl-s-Heart/Dockerfile build.executor": "Run",
+    "Docker.Owl-s-Heart/Dockerfile.executor": "Run",
+    "Docker.Owl-s-Heart/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.TaskServiceTest.convertDayOfWeek_ShouldReturnRussianName.executor": "Run",
+    "JUnit.TaskServiceTest.executor": "Run",
+    "JUnit.TaskServiceTest.saveTask_ShouldSaveTaskAndCreateMessage.executor": "Debug",
+    "Maven.Owl-s-Heart [test].executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Application.executor": "Run",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/LEGION Y540/Downloads/Owl's Heart/Owl-s-Heart/src/main/resources/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "database.query.execution",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LEGION Y540\Downloads\Owl's Heart\Owl-s-Heart\src\main\resources\templates" />
@@ -107,10 +129,48 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
-    <configuration name="mainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
-      <option name="MAIN_CLASS_NAME" value="mainTest" />
+    <configuration name="AccountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Owl-s-Heart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Owl.s.Heart.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Owl.s.Heart.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Owl.s.Heart.service.AccountServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Owl-s-Heart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Owl.s.Heart.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Owl.s.Heart.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Owl.s.Heart.service.TaskServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServiceTest.convertDayOfWeek_ShouldReturnRussianName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Owl-s-Heart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Owl.s.Heart.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Owl.s.Heart.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Owl.s.Heart.service.TaskServiceTest" />
+      <option name="METHOD_NAME" value="convertDayOfWeek_ShouldReturnRussianName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,9 +182,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Owl-s-Heart/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="maven3-eclipse-temurin-23_build" />
+          <option name="buildCliOptions" value="--target build" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Owl-s-Heart/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Owl-s-Heart/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Owl-s-Heart/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainTest" />
+        <item itemvalue="JUnit.AccountServiceTest" />
+        <item itemvalue="Docker.Owl-s-Heart/Dockerfile" />
+        <item itemvalue="JUnit.TaskServiceTest" />
+        <item itemvalue="JUnit.TaskServiceTest.convertDayOfWeek_ShouldReturnRussianName" />
+        <item itemvalue="Docker.Owl-s-Heart/Dockerfile build" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +265,8 @@
       <workItem from="1738278258136" duration="11038000" />
       <workItem from="1738321653392" duration="978000" />
       <workItem from="1738410027670" duration="693000" />
+      <workItem from="1738512391117" duration="5110000" />
+      <workItem from="1738517818537" duration="4509000" />
     </task>
     <task id="LOCAL-00001" summary="создание страницы отображение команды с сервисом и ДТО">
       <option name="closed" value="true" />
@@ -195,11 +292,34 @@
       <option name="project" value="LOCAL" />
       <updated>1738258847509</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="задачи на день">
+      <option name="closed" value="true" />
+      <created>1738512445666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738512445666</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.flywaydb:flyway-core" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -215,7 +335,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="создание страницы отображение команды с сервисом и ДТО" />
     <MESSAGE value="работа дальше" />
-    <option name="LAST_COMMIT_MESSAGE" value="работа дальше" />
+    <MESSAGE value="задачи на день" />
+    <option name="LAST_COMMIT_MESSAGE" value="задачи на день" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

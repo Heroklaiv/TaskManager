@@ -1,6 +1,5 @@
 package com.example.Owl.s.Heart.service;
 
-import com.example.Owl.s.Heart.controller.TeamController;
 import com.example.Owl.s.Heart.dto.CreateTaskDTO;
 import com.example.Owl.s.Heart.dto.TeamPageDTO;
 import com.example.Owl.s.Heart.entity.Account;
@@ -74,13 +73,13 @@ public class TeamService {
         return teamRepository.findById(id).get();
     }
 
-    public Team updateTeamName(Long idTeam, String name) {
+    public void updateTeamName(Long idTeam, String name) {
         Team team = teamRepository.findById(idTeam).get();
         team.setName(name);
-        return teamRepository.save(team);
+        teamRepository.save(team);
     }
 
-    public Team updateTeamMembers(Long idTeam, String username) {
+    public void updateTeamMembers(Long idTeam, String username) {
         Team team = teamRepository.findById(idTeam).get();
         Account account = accountRepository.findByUsername(username).get();
         if(team.getMember()== null){
@@ -90,7 +89,7 @@ public class TeamService {
         }else {
             team.getMember().add(account);
         }
-        return teamRepository.save(team);
+        teamRepository.save(team);
     }
 
     public List<Team> getTeamsByMember(Account account) {
