@@ -10,9 +10,8 @@ import com.example.Owl.s.Heart.repository.TaskRepository;
 import com.example.Owl.s.Heart.repository.TeamRepository;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -22,16 +21,19 @@ import java.util.List;
 
 @Service
 public class TaskService {
-    @Autowired
-    private TaskRepository taskRepository;
-    @Autowired
-    private TeamService teamService;
-    @Autowired
-    private TeamRepository teamRepository;
-    @Autowired
-    private MessageService messageService;
-    @Autowired
-    private AccountRepository accountRepository;
+    private final TaskRepository taskRepository;
+    private final TeamService teamService;
+    private final TeamRepository teamRepository;
+    private final MessageService messageService;
+    private final AccountRepository accountRepository;
+
+    public TaskService(TaskRepository taskRepository, TeamService teamService, TeamRepository teamRepository, MessageService messageService, AccountRepository accountRepository) {
+        this.taskRepository = taskRepository;
+        this.teamService = teamService;
+        this.teamRepository = teamRepository;
+        this.messageService = messageService;
+        this.accountRepository = accountRepository;
+    }
 
 
     public CreateTaskDTO generatePageCreateTask(Account account) {
@@ -231,9 +233,56 @@ public class TaskService {
     }
 
     public void deleteTask(Long idTask) {
-
         messageService.deleteMessageByTask(taskRepository.findById(idTask).get());
         taskRepository.deleteById(idTask);
+    }
+
+    public IndexPageDTO getDataIndexPage(Account account) {
+        IndexPageDTO indexPageDTO = new IndexPageDTO();
+        //сегодня
+        LocalDate date = LocalDate.now();
+        int month = date.getMonthValue();
+        String monthString = convertDayOfMonthIndex(month);
+        DayOfWeek todayOfWeek = date.getDayOfWeek();
+        String todayDayOfWeek = convertDayOfWeek(todayOfWeek.toString());
+        String thisDay = "сегодня, " + date.getDayOfMonth() + " " + monthString + ", " +
+                todayDayOfWeek;
+        indexPageDTO.setThisDay(thisDay);
+        indexPageDTO.setTasksControlThisDay(getTaskListOwnerDay(account, date));
+        indexPageDTO.setTasksPerformThisDay(getTaskListMemberDay(account, date));
+        indexPageDTO.setTasksControlThisDayBeforeDeadLine(getTaskListOwnerDeadline(account, date));
+        indexPageDTO.setTasksPerformThisDayBeforeDeadLine(getTaskListMemberDeadline(account, date));
+        //завтра
+        LocalDate nextDay = date.plusDays(1);
+        int month1 = nextDay.getMonthValue();
+        String monthString1 = convertDayOfMonthIndex(month1);
+        DayOfWeek todayOfWeek1 = nextDay.getDayOfWeek();
+        String todayDayOfWeek1 = convertDayOfWeek(todayOfWeek1.toString());
+        String thisDay1 = "завтра, " + nextDay.getDayOfMonth() + " " + monthString1 + ", " +
+                todayDayOfWeek1;
+        indexPageDTO.setNextDay(thisDay1);
+        indexPageDTO.setTasksControlNextDay(getTaskListOwnerDay(account, nextDay));
+        indexPageDTO.setTasksPerformNextDay(getTaskListMemberDay(account, nextDay));
+        //следующие 5 дней
+        TaskListDayDTO taskListDayDTOControl = new TaskListDayDTO();
+        TaskListDayDTO taskListDayDTOMember = new TaskListDayDTO();
+        for (int i = 2; i <= 6; i++) {
+            LocalDate day = date.plusDays(i);
+            if (taskListDayDTOControl.getTasks() == null) {
+                taskListDayDTOControl.setTasks(new ArrayList<>());
+                taskListDayDTOMember.setTasks(new ArrayList<>());
+            }
+            List<Task> taskListMember = taskListDayDTOMember.getTasks();
+            taskListMember.addAll(getTaskListMemberDay(account, day).getTasks());
+            taskListDayDTOMember.setTasks(taskListMember);
+            List<Task> taskListControl = taskListDayDTOControl.getTasks();
+            taskListControl.addAll(getTaskListOwnerDay(account, day).getTasks());
+            taskListDayDTOControl.setTasks(taskListControl);
+        }
+        indexPageDTO.setTasksControlNextWeek(taskListDayDTOControl);
+        indexPageDTO.setTasksPerformNextWeek(taskListDayDTOMember);
+        indexPageDTO.setNextWeek("с " + date.plusDays(2) + " по " + date.plusDays(6));
+        return indexPageDTO;
     }
 
     @Contract(pure = true)
@@ -265,6 +314,24 @@ public class TaskService {
             case 10 -> "Октябрь";
             case 11 -> "Ноябрь";
             case 12 -> "Декабрь";
+            default -> "error month";
+        };
+    }
+    @Contract(pure = true)
+    private @NotNull String convertDayOfMonthIndex(int month) {
+        return switch (month) {
+            case 1 -> "Января";
+            case 2 -> "Февраля";
+            case 3 -> "Марта";
+            case 4 -> "Апреля";
+            case 5 -> "Мая";
+            case 6 -> "Июня";
+            case 7 -> "Июля";
+            case 8 -> "Августа";
+            case 9 -> "Сентября";
+            case 10 -> "Октября";
+            case 11 -> "Ноября";
+            case 12 -> "Декабря";
             default -> "error month";
         };
     }

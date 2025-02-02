@@ -8,53 +8,161 @@
 <div th:insert="bar.html"></div>
 <div class="card">
     <div class="card-header">
-        Задачи на сегодня
+        <h2 th:text="${'Задачи на '+ dto.getThisDay()}"></h2>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Исполнение</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Исполнение</h4>
+    <h5 th:if = "${dto.getTasksPerformThisDay().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksPerformThisDay().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Контроль исполнения</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Контроль</h4>
+    <h5 th:if = "${dto.getTasksControlThisDay().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksControlThisDay().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
+    </div>
+    <h4 class="card-title">Исполнение (Срок исполнения вышел)</h4>
+    <h5 th:if = "${dto.getTasksPerformThisDayBeforeDeadLine().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksPerformThisDayBeforeDeadLine().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
+    </div>
+    <h4 class="card-title">Контроль (Срок контроля вышел)</h4>
+    <h5 th:if = "${dto.getTasksControlThisDayBeforeDeadLine().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksControlThisDayBeforeDeadLine().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
 </div>
 <div class="card">
     <div class="card-header">
-        Задачи на завтра
+        <h2 th:text="${'Задачи на '+ dto.getNextDay()}"></h2>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Исполнение</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Исполнение</h4>
+    <h5 th:if = "${dto.getTasksPerformNextDay().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksPerformNextDay().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Контроль исполнения</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Контроль</h4>
+    <h5 th:if = "${dto.getTasksControlNextDay().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksControlNextDay().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
 </div>
 <div class="card">
     <div class="card-header">
-        Задачи на неделю
+        <h2 th:text="${'Задачи '+ dto.getNextWeek()}"></h2>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Исполнение</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Исполнение</h4>
+    <h5 th:if = "${dto.getTasksPerformNextWeek().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksPerformNextWeek().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Контроль исполнения</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.With supporting text
-            below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Контроль</h4>
+    <h5 th:if = "${dto.getTasksControlNextWeek().getTasks().size()==0}" class="card-title">Задач нет</h5>
+    <div class="card-body" th:each="task : ${dto.getTasksControlNextWeek().getTasks()}">
+        <blockquote class="blockquote mb-0">
+            <p th:text="${'Задача - '+task.getName()}"></p>
+            <footer class="blockquote-footer" th:text="${'Описание '+ task.getDescription()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() != null}"
+                    th:text="${'Исполнитель '+task.getPerformers().getName()}"></footer>
+            <footer class="blockquote-footer" th:if="${task.getPerformers() == null}"
+                    th:text="${'Исполнитель не назначен'}"></footer>
+            <footer class="blockquote-footer" th:text="${'Назначеная комманда '+task.getWorkTeam().getName()}"></footer>
+            <footer class="blockquote-footer" th:text="${'Дата создания задачи '+task.getTaskDate()}"></footer>
+        </blockquote>
+        <form th:action="${'/task'}" method="get">
+            <input type="hidden" th:value="${task.getId()}" name="id">
+            <button type="submit" class="btn btn-outline-primary">Просмотр</button>
+        </form>
     </div>
 </div>
 

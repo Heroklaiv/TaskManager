@@ -39,7 +39,7 @@ public class TaskController {
     public String taskPost(NewTaskDTO newTaskDTO, HttpSession session, Model model) {
         Account account = (Account) session.getAttribute("user");
         taskService.saveTask(newTaskDTO, account);
-        return "index";
+        return "redirect:/";
     }
 
     @GetMapping("/owner")
